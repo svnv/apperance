@@ -1,0 +1,27 @@
+@import "../variables";
+
+button.button,
+span.button,
+input[type=submit],
+input[type=reset],
+input[type=search],
+input[type=button] {
+    border:none;
+    padding: 13px 20px 10px;
+    background: $color-primary;
+    border-bottom: 3px solid $color-content;
+    color: $color-content;
+    font-size: 1em;
+    line-height: 1em;
+    display: inline-block;
+    cursor: pointer;
+    transition: all 50ms ease-out;
+    letter-spacing: 0.03em;
+
+
+    &:hover {
+        background: $color-primary-attention;
+        border-bottom: 3px solid $color-content-attention;
+        color: $color-content-attention;
+    }
+}

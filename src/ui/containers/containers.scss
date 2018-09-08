@@ -1,0 +1,12 @@
+@import "../variables";
+
+.container{
+    display: block;
+    position: relative;
+    padding: $whitespace-default-vertical $whitespace-default-horizontal;
+    margin: 0 auto;
+}
+
+.limit-width{
+    max-width: 60em;
+}

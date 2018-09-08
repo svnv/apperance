@@ -1,0 +1,22 @@
+// Colors
+
+// The attention class is intended to be
+// used for :hover and :focus etc.
+$color-content: #333;
+$color-content-attention: #555555;
+
+$color-primary: #92D5E6;
+$color-primary-attention: #A5DCEA;
+
+$color-highlight: #ec1a1a;
+
+// The alt-class can be used as a supplement to the default color
+// but where you need to group things.
+
+$color-background: #fff;
+$color-background-alt: #efefef;
+
+// Margins and paddings
+
+$whitespace-default-vertical: 3em;
+$whitespace-default-horizontal: 4em;

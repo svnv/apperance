@@ -1,0 +1,56 @@
+@import "../variables";
+
+code {
+    font-family: monospace;
+    font-size: 1em;
+    line-height: 1.375em;
+    color: $color-highlight;
+}
+
+pre {
+    font-family: monospace;
+    font-size: 1em;
+    line-height: 1.375em;
+    color: $color-content;
+    background-color: $color-background-alt;
+    padding: $whitespace-default-vertical $whitespace-default-horizontal;
+    margin: 0;
+    word-break: break-word;
+    white-space: pre-wrap;
+    // counter-reset: line;
+
+    // &> code {
+    //     counter-increment: line;
+
+    //     &:before{
+    //         content: counter(line);
+    //     }
+    // }
+}
+
+.example {
+    position: relative;
+    display: block;
+    padding: $whitespace-default-vertical $whitespace-default-horizontal;
+    border: 1px solid  $color-background-alt;
+    background: repeating-linear-gradient(
+        -45deg,
+        #fafafa,
+        #fafafa 10px,
+        $color-background 10px,
+        $color-background 20px
+      );
+
+    &::before{
+        content: "example";
+        position: absolute;
+        top: 0px;
+        right: 0px;
+        display: inline-block;
+        font-size: 10px;
+        text-transform: uppercase;
+        font-weight: 100;
+        padding: 5px 10px;
+        color: $color-background-alt;
+    }
+}
