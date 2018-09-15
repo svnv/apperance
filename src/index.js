@@ -1,7 +1,8 @@
 
 // Reset browser styles
 require("normalize.css");
-require("highlight.js/styles/github.css");
+require("prismjs/themes/prism-okaidia.css");
+
 
 // Elements in the order it has to appear
 var elements = [
@@ -20,6 +21,10 @@ var elements = [
     {
         doc: require("./ui/buttons/buttons.md"),
         style: require("./ui/buttons/buttons.scss")
+    },
+    {
+        doc: require("./ui/forms/forms.md"),
+        style: require("./ui/forms/forms.scss")
     }
 ];
 

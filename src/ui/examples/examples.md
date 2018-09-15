@@ -10,7 +10,7 @@ Use the `<code>` tag for a single code entity.
 ```
 
 ## Pre tag
-When you need to show mulitline code blocks, use the `<pre>` tag.
+When you need to show mulitline code blocks, use the `<pre>` tag. For code highlitning use something like [prismjs](https://prismjs.com/).
 
 ```(html)
 <pre>

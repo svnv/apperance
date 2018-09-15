@@ -9,23 +9,20 @@ code {
 
 pre {
     font-family: monospace;
-    font-size: 1em;
-    line-height: 1.375em;
-    color: $color-content;
-    background-color: $color-background-alt;
+    font-size: 1em !important;
+    line-height: 2em;
+    color: #fff;
+    background-color: #242429;
     padding: $whitespace-default-vertical $whitespace-default-horizontal;
     margin: 0;
-    word-break: break-word;
-    white-space: pre-wrap;
-    // counter-reset: line;
-
-    // &> code {
-    //     counter-increment: line;
-
-    //     &:before{
-    //         content: counter(line);
-    //     }
-    // }
+    word-break: break-word !important;
+    white-space: pre-wrap !important;
+    code {
+        word-break: break-word !important;
+        white-space: pre-wrap !important;
+        background: transparent !important;
+        box-shadow: none !important;
+    }
 }
 
 .example {
@@ -39,7 +36,7 @@ pre {
         #fafafa 10px,
         $color-background 10px,
         $color-background 20px
-      );
+    );
 
     &::before{
         content: "example";

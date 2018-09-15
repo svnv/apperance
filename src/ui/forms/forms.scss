@@ -1,0 +1,173 @@
+@import "../variables";
+
+
+.form-group {
+    position: relative;
+    margin-bottom: 2em;
+}
+
+.form-group label {
+    display: block;
+    font-size: 1em;
+    line-height: 2em;
+    color: $color-content;
+    padding: 0 0 5px 5px;
+    font-weight: 500;
+    -webkit-tap-highlight-color: transparent;
+    letter-spacing: 0.03em;
+}
+
+:focus {
+    outline-color: transparent;
+    outline-style: none;
+}
+
+.form-group input[type='text'],
+.form-group input[type='password'],
+.form-group input[type='email'],
+.form-group input[type='tel'],
+.form-group input[type='number'],
+.form-group input[type='time'],
+.form-group input[type='date'],
+.form-group input[type='datetime'],
+.form-group input[type='datetime-local'],
+.form-group input[type='week'],
+.form-group input[type='month'],
+.form-group input[type='year'],
+.form-group input[type='url'],
+.form-group input[type='color'] {
+    font-family: "Helvetica Neue", Helvetica, Arial,  Calibri, sans-serif;
+    font-size: 1em;
+    line-height: 1.3em;
+    color: $color-content;
+    display: block;
+    width: calc(100%);
+    border: 1px solid $color-content;
+    padding: 13px 15px 13px;
+    transition: all 100ms ease-out;
+
+    &::placeholder {
+        color: $color-content-muted;
+        opacity: 1; /* Firefox */
+    }
+}
+
+.form-group input[type='text']:focus,
+.form-group input[type='password']:focus,
+.form-group input[type='email']:focus,
+.form-group input[type='tel']:focus,
+.form-group input[type='number']:focus,
+.form-group input[type='time']:focus,
+.form-group input[type='date']:focus,
+.form-group input[type='datetime']:focus,
+.form-group input[type='datetime-local']:focus,
+ .form-group input[type='week']:focus,
+.form-group input[type='month']:focus,
+.form-group input[type='year']:focus,
+.form-group input[type='url']:focus,
+.form-group input[type='color']:focus {
+    border: 1px solid $color-primary-attention;
+}
+
+div.checkbox,
+div.radio{
+    margin: 10px 0;
+    position: relative;
+}
+
+div.checkbox input[type=checkbox],
+div.radio input[type=radio] {
+    opacity: 0;
+    height: 0;
+    width: 0;
+}
+
+div.checkbox input[type=checkbox] + label,
+div.radio input[type=radio] + label{
+    display: inline-block;
+    position: relative;
+    user-select: none;
+    cursor: pointer;
+}
+
+div.checkbox input[type=checkbox] + label:before {
+    content: '';
+    position: relative;
+    vertical-align: middle;
+    width: 22px;
+    height: 22px;
+    bottom: 1px;
+    margin-right: 5px;
+    background-color: $color-background;
+    border: 1px solid $color-content;
+    display: inline-block;
+    transition: all 100ms ease-out;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 100%;
+}
+
+div.checkbox:hover input[type=checkbox] + label:before {
+    border: 1px solid $color-primary-attention;
+}
+
+div.checkbox input[type=checkbox]:checked + label:before {
+    background-image: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz48c3ZnIHdpZHRoPSIxNHB4IiBoZWlnaHQ9IjE0cHgiIHZpZXdCb3g9IjAgMCAxNCAxNCIgdmVyc2lvbj0iMS4xIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIj48ZyBpZD0iUGFnZS0xIiBzdHJva2U9Im5vbmUiIHN0cm9rZS13aWR0aD0iMSIgZmlsbD0ibm9uZSIgZmlsbC1ydWxlPSJldmVub2RkIiBzdHJva2UtbGluZWNhcD0ic3F1YXJlIj48cGF0aCBkPSJNNC41LDQuNSBMOS41LDkuNSIgaWQ9IkxpbmUiIHN0cm9rZT0iIzMzMzMzMyIgc3Ryb2tlLXdpZHRoPSIyIj48L3BhdGg+PHBhdGggZD0iTTQuNSw5LjUgTDkuNSw0LjUiIGlkPSJMaW5lIiBzdHJva2U9IiMzMzMzMzMiIHN0cm9rZS13aWR0aD0iMiI+PC9wYXRoPjwvZz48L3N2Zz4=);
+}
+
+div.radio input[type=radio] + label:before {
+    position: relative;
+    top: 3.5px;
+    width: 22px;
+    height: 22px;
+    margin-right: 5px;
+    z-index: 1;
+    content: '';
+    background-color: $color-background;
+    border:1px solid $color-content;
+    display: inline-block;
+    border-radius: 20px;
+    transition: all 100ms ease-out;
+}
+
+div.radio:hover input[type=radio] + label:before {
+    border: 1px solid $color-primary-attention;
+}
+
+div.radio input[type=radio] + label:after {
+    z-index: 2;
+    content: '';
+    position: absolute;
+    left: 3px;
+    top: 6px;
+    width: 18px;
+    height: 18px;
+    border-radius: 20px;
+    background-color: transparent;
+}
+
+div.radio input[type=radio]:checked + label:after {
+    background-color: $color-content;
+}
+
+
+.form-group textarea{
+    font-family: "Helvetica Neue", Helvetica, Arial,  Calibri, sans-serif;
+    font-size: 1em;
+    line-height: 1.3em;
+    color: $color-content;
+    display: block;
+    width: calc(100%);
+    border: 1px solid $color-background-alt;
+    padding: 13px 15px 13px;
+    transition: all 100ms ease-out;
+
+    &::placeholder {
+        color: $color-content-muted;
+        opacity: 1; /* Firefox */
+    }
+
+    &:focus {
+        border: 1px solid $color-primary-attention;
+    }
+}
