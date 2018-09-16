@@ -9,7 +9,7 @@
 .form-group label {
     display: block;
     font-size: 1em;
-    line-height: 2em;
+    line-height: 1.2em;
     color: $color-content;
     padding: 0 0 5px 5px;
     font-weight: 500;
@@ -43,31 +43,32 @@
     display: block;
     width: calc(100%);
     border: 1px solid $color-content;
-    padding: 13px 15px 13px;
+    padding: 8px 15px;
+    border-radius: 3px;
     transition: all 100ms ease-out;
+
+    &:focus{
+        border: 1px solid $color-primary-attention;
+    }
 
     &::placeholder {
         color: $color-content-muted;
         opacity: 1; /* Firefox */
     }
+
+    &:disabled {
+        cursor: not-allowed;
+        background: $color-background-alt;
+        border: 1px solid #ddd;
+
+
+        &::placeholder {
+            color: #ddd;
+            opacity: 1; /* Firefox */
+        }
+    }
 }
 
-.form-group input[type='text']:focus,
-.form-group input[type='password']:focus,
-.form-group input[type='email']:focus,
-.form-group input[type='tel']:focus,
-.form-group input[type='number']:focus,
-.form-group input[type='time']:focus,
-.form-group input[type='date']:focus,
-.form-group input[type='datetime']:focus,
-.form-group input[type='datetime-local']:focus,
- .form-group input[type='week']:focus,
-.form-group input[type='month']:focus,
-.form-group input[type='year']:focus,
-.form-group input[type='url']:focus,
-.form-group input[type='color']:focus {
-    border: 1px solid $color-primary-attention;
-}
 
 div.checkbox,
 div.radio{
@@ -90,12 +91,18 @@ div.radio input[type=radio] + label{
     cursor: pointer;
 }
 
+div.checkbox input[type=checkbox]:disabled + label,
+div.radio input[type=radio]:disabled + label{
+    cursor: not-allowed;
+}
+
 div.checkbox input[type=checkbox] + label:before {
     content: '';
     position: relative;
     vertical-align: middle;
     width: 22px;
-    height: 22px;
+    height: 20px;
+    border-radius: 3px;
     bottom: 1px;
     margin-right: 5px;
     background-color: $color-background;
@@ -112,14 +119,20 @@ div.checkbox:hover input[type=checkbox] + label:before {
 }
 
 div.checkbox input[type=checkbox]:checked + label:before {
-    background-image: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz48c3ZnIHdpZHRoPSIxNHB4IiBoZWlnaHQ9IjE0cHgiIHZpZXdCb3g9IjAgMCAxNCAxNCIgdmVyc2lvbj0iMS4xIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIj48ZyBpZD0iUGFnZS0xIiBzdHJva2U9Im5vbmUiIHN0cm9rZS13aWR0aD0iMSIgZmlsbD0ibm9uZSIgZmlsbC1ydWxlPSJldmVub2RkIiBzdHJva2UtbGluZWNhcD0ic3F1YXJlIj48cGF0aCBkPSJNNC41LDQuNSBMOS41LDkuNSIgaWQ9IkxpbmUiIHN0cm9rZT0iIzMzMzMzMyIgc3Ryb2tlLXdpZHRoPSIyIj48L3BhdGg+PHBhdGggZD0iTTQuNSw5LjUgTDkuNSw0LjUiIGlkPSJMaW5lIiBzdHJva2U9IiMzMzMzMzMiIHN0cm9rZS13aWR0aD0iMiI+PC9wYXRoPjwvZz48L3N2Zz4=);
+    background-image: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz48c3ZnIHdpZHRoPSIyMnB4IiBoZWlnaHQ9IjIwcHgiIHZpZXdCb3g9IjAgMCAyMiAyMCIgdmVyc2lvbj0iMS4xIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIj48ZyBpZD0iUGFnZS0xIiBzdHJva2U9Im5vbmUiIHN0cm9rZS13aWR0aD0iMSIgZmlsbD0ibm9uZSIgZmlsbC1ydWxlPSJldmVub2RkIiBzdHJva2UtbGluZWNhcD0icm91bmQiPjxwYXRoIGQ9Ik03LjUsMTMuNSBMMTQuNTcxMDY3OCw2LjQyODkzMjE5IiBpZD0iTGluZSIgc3Ryb2tlPSIjMzMzMzMzIiBzdHJva2Utd2lkdGg9IjMiPjwvcGF0aD48cGF0aCBkPSJNNy41LDYuNSBMMTQuNTcxMDY3OCwxMy41NzEwNjc4IiBpZD0iTGluZSIgc3Ryb2tlPSIjMzMzMzMzIiBzdHJva2Utd2lkdGg9IjMiPjwvcGF0aD48L2c+PC9zdmc+);
 }
+
+div.checkbox input[type=checkbox]:disabled + label:before {
+    background-color: $color-background-alt;
+    border: 1px solid #ddd;
+}
+
 
 div.radio input[type=radio] + label:before {
     position: relative;
     top: 3.5px;
-    width: 22px;
-    height: 22px;
+    width: 20px;
+    height: 20px;
     margin-right: 5px;
     z-index: 1;
     content: '';
@@ -134,22 +147,15 @@ div.radio:hover input[type=radio] + label:before {
     border: 1px solid $color-primary-attention;
 }
 
-div.radio input[type=radio] + label:after {
-    z-index: 2;
-    content: '';
-    position: absolute;
-    left: 3px;
-    top: 6px;
-    width: 18px;
-    height: 18px;
-    border-radius: 20px;
-    background-color: transparent;
+div.radio input[type=radio]:checked + label:before {
+    background-image: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz48c3ZnIHdpZHRoPSIyMHB4IiBoZWlnaHQ9IjIwcHgiIHZpZXdCb3g9IjAgMCAyMCAyMCIgdmVyc2lvbj0iMS4xIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIj48ZyBpZD0iUGFnZS0xIiBzdHJva2U9Im5vbmUiIHN0cm9rZS13aWR0aD0iMSIgZmlsbD0ibm9uZSIgZmlsbC1ydWxlPSJldmVub2RkIj48Y2lyY2xlIGlkPSJPdmFsIiBmaWxsPSIjMzMzMzMzIiBjeD0iMTAiIGN5PSIxMCIgcj0iNyI+PC9jaXJjbGU+PC9nPjwvc3ZnPg==);
+    background-position: center;
+    background-repeat: no-repeat;
 }
-
-div.radio input[type=radio]:checked + label:after {
-    background-color: $color-content;
+div.radio input[type=radio]:disabled + label:before {
+    background-color: $color-background-alt;
+    border: 1px solid #ddd;
 }
-
 
 .form-group textarea{
     font-family: "Helvetica Neue", Helvetica, Arial,  Calibri, sans-serif;
@@ -158,9 +164,10 @@ div.radio input[type=radio]:checked + label:after {
     color: $color-content;
     display: block;
     width: calc(100%);
-    border: 1px solid $color-background-alt;
+    border: 1px solid $color-content;
     padding: 13px 15px 13px;
     transition: all 100ms ease-out;
+    border-radius: 3px;
 
     &::placeholder {
         color: $color-content-muted;

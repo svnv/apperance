@@ -6,29 +6,67 @@ input[type=submit].button,
 input[type=reset].button,
 input[type=search].button,
 input[type=button].button {
-    // border: 1px #333 solid;
-    border: none;
-    border-bottom: 3px #333 solid;
+    border:none;
+    border-radius: 3px;
     padding: 12px 19px 10px;
     color: $color-content;
-    text-shadow: 1px 1px 0 rgba(255,255,255,0.5);
-    background: $color-primary;
+    background: $color-background;
     font-size: 1em;
     line-height: 1em;
     display: inline-block;
     cursor: pointer;
-    font-weight: 500;
+    font-weight: 400;
     position: relative;
     z-index: 1;
+    user-select: none;
 
-    &:hover {
-        background: $color-primary-attention;
+    &:before {
+        border: 1px #333 solid;
+        border-radius: 3px;
+        content: '';
+        position: absolute;
+        z-index: -1;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: #D6FCF5;
     }
-
+    &:after {
+        border: 1px #333 solid;
+        border-radius: 3px;
+        z-index: -2;
+        position: absolute;
+        content: '';
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: -4px;
+        background: #AEECDF;
+    }
+    &:hover:before {
+        background: #A7FFED;
+    }
+    &:hover:after {
+        background: #9DDBCF;
+    }
     &:active{
-        box-shadow: 0px 0px 3px inset rgba(0, 0, 0, 0.2);
+        border:none;
     }
-
+    &:active:before{
+        box-shadow: 0px 0px 3px 3px inset rgba(0, 0, 0, 0.2);
+    }
+    &:disabled{
+        cursor: not-allowed;
+    }
+    &:disabled:before {
+        background: $color-background-alt;
+        border: 1px solid #ddd;
+    }
+    &:disabled:after {
+        background: #e0e0e0;
+        border: 1px solid #ddd;
+    }
 }
 
 button.button.button-secondary,
@@ -37,15 +75,25 @@ input[type=submit].button.button-secondary,
 input[type=reset].button.button-secondary,
 input[type=search].button.button-secondary,
 input[type=button].button.button-secondary {
-    background-color: $color-background;
-    color: $color-content;
-    border: 1px solid $color-content;
-    border-bottom: 3px solid $color-content;
-    padding: 12px 19px 10px;
-
-    &:hover{
-        background-color: $color-content-attention;
-        color: $color-background;
-        text-shadow: 1px 1px 0 rgba(0,0,0,0.5);
+    &:before {
+        background: #ffffff;
+    }
+    &:after {
+        border: 1px #333 solid;
+        border-radius: 3px;
+        z-index: -2;
+        position: absolute;
+        content: '';
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: -4px;
+        background: #FFD797;
+    }
+    &:hover:before {
+        background: #ffffff;
+    }
+    &:hover:after {
+        background: #FFFA97;
     }
 }

@@ -21,7 +21,7 @@ When you need to show mulitline code blocks, use the `<pre>` tag. For code highl
 
 ## Example class
 
-Wrap something in a tag with `.example` for examples, it will add a light grey border around the content, and the word "Example" in the top right corner.
+Wrap something in a tag with `.example` for examples, it will add a light grey transparent background with a repeating pattern.
 
 ```(html)
 <div class="example">
