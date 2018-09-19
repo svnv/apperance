@@ -19,6 +19,10 @@ var elements = [
         style: require("./ui/examples/examples.scss")
     },
     {
+        doc: require("./ui/navigation/navigation.md"),
+        style: require("./ui/navigation/navigation.scss")
+    },
+    {
         doc: require("./ui/buttons/buttons.md"),
         style: require("./ui/buttons/buttons.scss")
     },
@@ -40,7 +44,6 @@ document.body.appendChild(div);
 var preCollection = document.getElementsByTagName("pre");
 var pres = [].slice.call(preCollection)
 for(let pre of pres){
-    console.log(pres.length);
     let demo = document.createElement("div");
     demo.innerHTML = pre.innerText;
     demo.className = "example";

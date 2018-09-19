@@ -1,0 +1,107 @@
+@import "../variables";
+
+a {
+    color: $color-primary-attention;
+    text-shadow: 0 0 1px rgba(255, 255,255 ,0.2);
+    text-decoration: underline;
+
+    &[target='blank']:after{
+        content: '⧉';
+        display: inline-block;
+        text-decoration: none;
+        user-select: none;
+    }
+}
+
+nav.tabs {
+    display: inline-block;
+    position: relative;
+
+    &::after{
+        content: " ";
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        height: 3px;
+        background: rgba(0,0,0,0.05);
+    }
+
+    a {
+        position: relative;
+        display: inline-block;
+        text-decoration: none;
+        padding: 20px 40px;
+        letter-spacing: 0.03em;
+        text-shadow: none;
+
+
+        &.active{
+            text-shadow: 0 0 1px rgba(255, 255,255 ,0.2);
+
+            &::after{
+                content: " ";
+                position: absolute;
+                bottom: 0;
+                left: 0;
+                right: 0;
+                height: 3px;
+                background: $color-primary;
+
+            }
+        }
+    }
+}
+
+nav.vertical{
+    display: inline-block;
+    position: relative;
+    &::after{
+        content: " ";
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        right: 0;
+        width: 3px;
+        background: rgba(0,0,0,0.05);
+    }
+
+    ul {
+        // display: inline-block;
+        padding: 0;
+        margin: 0;
+
+        li {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: block;
+
+            a {
+                position: relative;
+                margin: 0;
+                display: block;
+                padding: 10px 20px;
+                text-decoration: none;
+
+
+            }
+
+            &.active a{
+                text-shadow: 0 0 1px rgba(255, 255,255 ,0.2);
+
+                &::after {
+                    content: " ";
+                    position: absolute;
+                    top: 0;
+                    bottom: 0;
+                    right: 0;
+                    width: 3px;
+                    background: $color-primary;
+
+                }
+            }
+        }
+    }
+
+}

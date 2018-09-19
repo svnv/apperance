@@ -13,37 +13,47 @@ module.exports = {
     devtool: 'inline-source-map',
 
     module: {
-        rules: [{
-            test: /\.md$/,
-            use: [
-                {
-                    loader: "html-loader"
-                },
-                {
-                    loader: "markdown-loader",
-                    options: {
-                        breaks: true,
-                        highlight: function(code, lang) {
-                            return prism.highlight(code, prism.languages['html'], 'html');
+        rules: [
+            // {
+            //     test: /\.jsx?$/,
+            //     use: {
+            //         loader: 'prettier-loader',
+            //         exclude: /node_modules/,
+            //     }
+            // },
+            {
+                test: /\.md$/,
+                use: [
+                    {
+                        loader: "html-loader"
+                    },
+                    {
+                        loader: "markdown-loader",
+                        options: {
+                            breaks: true,
+                            highlight: function(code, lang) {
+                                return prism.highlight(code, prism.languages['html'], 'html');
+                            }
                         }
                     }
-                }
-            ]
-        },
-        {
-            test: /\.scss$/,
-            use: [
-                "style-loader", // creates style nodes from JS strings
-                "css-loader", // translates CSS into CommonJS
-                "sass-loader" // compiles Sass to CSS, using Node Sass by default
-            ]
-        },{
-            test: /\.css$/,
-            use: [
-                "style-loader", // creates style nodes from JS strings
-                "css-loader" // translates CSS into CommonJS
-            ]
-        }]
+                ]
+            },
+            {
+                test: /\.scss$/,
+                use: [
+                    "style-loader", // creates style nodes from JS strings
+                    "css-loader", // translates CSS into CommonJS
+                    "sass-loader" // compiles Sass to CSS, using Node Sass by default
+                ]
+            },
+            {
+                test: /\.css$/,
+                use: [
+                    "style-loader", // creates style nodes from JS strings
+                    "css-loader" // translates CSS into CommonJS
+                ]
+            }
+        ]
     },
 
     plugins: [
