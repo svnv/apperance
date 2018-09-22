@@ -25,7 +25,7 @@ Here we have an <a href="https://google.com">example of a regular link</a> and o
 ```html
 <nav class="vertical">
     <ul>
-        <li class="active"><a href="">Fist</a></li>
+        <li><a href="" className="active">Fist</a></li>
         <li><a href="">Second</a></li>
         <li><a href="">Made to last</a></li>
     </ul>

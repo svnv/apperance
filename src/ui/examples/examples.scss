@@ -35,4 +35,10 @@ pre {
     padding: $whitespace-default-vertical $whitespace-default-horizontal;
     background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4gPHN2ZyB3aWR0aD0iMjZweCIgaGVpZ2h0PSIyNnB4IiB2aWV3Qm94PSIwIDAgMjYgMjYiIHZlcnNpb249IjEuMSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayI+IDxnIGlkPSJQYWdlLTEiIHN0cm9rZT0ibm9uZSIgc3Ryb2tlLXdpZHRoPSIxIiBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiIGZpbGwtb3BhY2l0eT0iMC4wNSI+IDxwYXRoIGQ9Ik0yNiwyMi41IEwyNSwyMi41IEwyNSwyMy41IEwyNSwyNiBMMSwyNiBMMSwyMy41IEwxLDIyLjUgTDUuNTUxMTE1MTJlLTE3LDIyLjUgTDAsNC41IEwxLDQuNSBMMSwzLjUgTDEsMS42NjUzMzQ1NGUtMTYgTDI1LDAgTDI1LDMuNSBMMjUsNC41IEwyNiw0LjUgTDI2LDIyLjUgWiBNMTIsMTAgTDEyLDE2IEwxMiwxNyBMMTQsMTcgTDE0LDE2IEwxNCwxMCBMMTQsOSBMMTIsOSBMMTIsMTAgWiIgaWQ9IkNvbWJpbmVkLVNoYXBlIiBmaWxsPSIjMDAwMDAwIj48L3BhdGg+IDwvZz4gPC9zdmc+);
     background-position: -5px 0px;
+    box-sizing: border-box;
+
+    .row [class^="col"] {
+        border-color: $color-primary;
+        min-height: 30px;
+      }
 }

@@ -34,6 +34,7 @@ nav.tabs {
         padding: 20px 40px;
         letter-spacing: 0.03em;
         text-shadow: none;
+        transition: all 100ms ease-out;
 
 
         &.active{
@@ -53,10 +54,15 @@ nav.tabs {
     }
 }
 
-nav.vertical{
-    display: inline-block;
-    position: relative;
-    &::after{
+nav.vertical {
+    display: block;
+    overflow: visible;
+
+    &.fixed {
+        position: fixed;
+    }
+
+    &::after {
         content: " ";
         position: absolute;
         top: 0;
@@ -67,7 +73,6 @@ nav.vertical{
     }
 
     ul {
-        // display: inline-block;
         padding: 0;
         margin: 0;
 
@@ -83,22 +88,22 @@ nav.vertical{
                 display: block;
                 padding: 10px 20px;
                 text-decoration: none;
+                transition: all 1000ms ease-out;
 
 
-            }
+                &.active {
+                    text-shadow: 0 0 1px rgba(255, 255,255 ,0.2);
 
-            &.active a{
-                text-shadow: 0 0 1px rgba(255, 255,255 ,0.2);
+                    &::after {
+                        content: " ";
+                        position: absolute;
+                        top: 0;
+                        bottom: 0;
+                        right: 0;
+                        width: 3px;
+                        background: $color-primary;
 
-                &::after {
-                    content: " ";
-                    position: absolute;
-                    top: 0;
-                    bottom: 0;
-                    right: 0;
-                    width: 3px;
-                    background: $color-primary;
-
+                    }
                 }
             }
         }
