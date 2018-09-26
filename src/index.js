@@ -93,7 +93,7 @@ function getBodyScrollTop(){
 }
 window.setInterval(()=>{
     const top = getBodyScrollTop();
-    active = linkScrollTops.find(x => x.top <= top);
+    active = linkScrollTops.find(x => x.top <= (top + 10));
     linkScrollTops.forEach(x => x.link.className = "" );
     if (!active) return;
     active.link.className = "active";

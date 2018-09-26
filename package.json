@@ -9,11 +9,9 @@
     "start": "webpack-dev-server --open --mode=development",
     "build": "webpack --config webpack.config.js --mode=production"
   },
-  "dependencies": {
-    "normalize.css": "^8.0.0",
-    "prismjs": "^1.15.0"
-  },
   "devDependencies": {
+    "normalize.css": "^8.0.0",
+    "prismjs": "^1.15.0",
     "clean-webpack-plugin": "^0.1.19",
     "css-loader": "^1.0.0",
     "eslint": "^5.6.0",

@@ -36,19 +36,22 @@ nav.tabs {
         text-shadow: none;
         transition: all 100ms ease-out;
 
+        &::after{
+            content: " ";
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: transparent;
+            transition: all 100ms ease-out;
+        }
 
         &.active{
             text-shadow: 0 0 1px rgba(255, 255,255 ,0.2);
 
             &::after{
-                content: " ";
-                position: absolute;
-                bottom: 0;
-                left: 0;
-                right: 0;
-                height: 3px;
                 background: $color-primary;
-
             }
         }
     }
@@ -88,21 +91,24 @@ nav.vertical {
                 display: block;
                 padding: 10px 20px;
                 text-decoration: none;
-                transition: all 1000ms ease-out;
+                transition: all 100ms ease-out;
 
+                &::after {
+                    content: " ";
+                    position: absolute;
+                    top: 0;
+                    bottom: 0;
+                    right: 0;
+                    width: 3px;
+                    background: transparent;
+                    transition: all 100ms ease-out;
+                }
 
                 &.active {
                     text-shadow: 0 0 1px rgba(255, 255,255 ,0.2);
 
                     &::after {
-                        content: " ";
-                        position: absolute;
-                        top: 0;
-                        bottom: 0;
-                        right: 0;
-                        width: 3px;
                         background: $color-primary;
-
                     }
                 }
             }
