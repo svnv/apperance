@@ -1,0 +1,23 @@
+@import "../variables";
+
+.modal {
+    border-radius: 3px;
+    background: $color-background;
+    padding: 0px 2em 2em;
+    margin: 0;
+    overflow: hidden;
+    box-sizing: border-box;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+
+    .buttons {
+        margin-top: 2em;
+
+        .button {
+            margin-right: 10px;
+
+            &:last-child{
+                margin-right: 0;
+            }
+        }
+    }
+}

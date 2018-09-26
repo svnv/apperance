@@ -32,6 +32,10 @@ var elements = [
         style: require("./ui/forms/forms.scss")
     },
     {
+        doc: require("./ui/modals/modals.md"),
+        style: require("./ui/modals/modals.scss")
+    },
+    {
         doc: require("./ui/examples/examples.md"),
         style: require("./ui/examples/examples.scss")
     },
