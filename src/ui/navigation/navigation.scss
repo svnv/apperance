@@ -56,14 +56,19 @@ nav.tabs {
         }
     }
 }
+.sticky {
+
+    position: sticky;
+    position: -webkit-sticky;
+    top: 0; /* required */
+}
+
 
 nav.vertical {
     display: block;
     overflow: visible;
+    position: relative;
 
-    &.fixed {
-        position: fixed;
-    }
 
     &::after {
         content: " ";

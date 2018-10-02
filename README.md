@@ -37,7 +37,7 @@ yarn build
 - [ ] helper classes for floats, fixed, sticky
 - [x] auto-generated menu
 - [x] scrollspy
-- [] make the vertical menu stick with `sticky` instead of `fixed`
+- [x] make the veritcal menu stick with `sticky` instead of `fixed`
 - [ ] clean up sass variables
 
 ## Nice to haves

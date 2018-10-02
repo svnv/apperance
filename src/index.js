@@ -32,6 +32,10 @@ var elements = [
         style: require("./ui/forms/forms.scss")
     },
     {
+        doc: require("./ui/dropdowns/dropdowns.md"),
+        style: require("./ui/dropdowns/dropdowns.scss")
+    },
+    {
         doc: require("./ui/modals/modals.md"),
         style: require("./ui/modals/modals.scss")
     },
@@ -67,8 +71,8 @@ for (let pre of pres) {
 
 
 // Menu with scrollspy
-let aside = createElement("aside", "col-3");
-let nav  = createElement("nav", "vertical fixed");
+let aside = createElement("aside", "col-3 sticky");
+let nav  = createElement("nav", "vertical");
 aside.appendChild(nav);
 let menuList  = document.createElement("ul");
 nav.appendChild(menuList);
