@@ -1,0 +1,98 @@
+@import "../variables";
+
+
+@keyframes dropdown-show {
+    0% {
+        visibility: visible;
+        overflow: visible;
+     }
+    100% {
+        visibility: visible;
+        overflow: visible;
+    }
+}
+
+@keyframes dropdown-hide {
+    0% {
+        visibility: visible;
+        overflow: visible;
+     }
+    100% {
+        visibility: visible;
+        overflow: visible;
+    }
+}
+
+.dropdown{
+    display: inline-block;
+    border-radius: 3px;
+    border: 1px solid #ddd;
+    padding: 10px 35px 10px 20px;
+    position: relative;
+    box-sizing: content-box;
+    background: $color-background;
+    cursor: pointer;
+
+    &:after{
+        content: " ";
+        position: absolute;
+        top: 2px;
+        right: 0;
+        bottom: 0;
+        width: 35px;
+        background: url(data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTJweCIgaGVpZ2h0PSI4cHgiIHZpZXdCb3g9IjAgMCAxMiA4IiB2ZXJzaW9uPSIxLjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiPjxnIGlkPSJQYWdlLTEiIHN0cm9rZT0ibm9uZSIgc3Ryb2tlLXdpZHRoPSIxIiBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCI+PHBvbHlsaW5lIGlkPSJQYXRoLTIiIHN0cm9rZT0iIzMzMzMzMyIgc3Ryb2tlLXdpZHRoPSIzIiBmaWxsLXJ1bGU9Im5vbnplcm8iIHBvaW50cz0iMiAyIDYgNiAxMCAyIj48L3BvbHlsaW5lPjwvZz48L3N2Zz4=);
+        background-repeat: no-repeat;
+        background-position: center;
+    }
+
+    &.dropdown-open-on-hover:hover > ul,
+    &.dropdown-open > ul {
+        visibility: visible;
+        overflow: visible;
+        opacity: 1;
+        height: auto;
+        animation: dropdown-show 200ms;
+    }
+
+    > ul {
+        display: block;
+        list-style: none;
+        position: absolute;
+        top: 40px;
+        left: 0;
+        margin: 0;
+        padding: 0;
+        min-width: 100%;
+        border-radius: 3px;
+        max-height: 0;
+        visibility: hidden;
+        overflow: hidden;
+        transition: all 200ms ease-out;
+        opacity: 0;
+        animation: dropdown-hide 200ms;
+        border-top:10px solid transparent;
+
+        > li {
+            margin: 0;
+            padding: 0;
+
+
+            a {
+                border-right: 1px solid #ddd;
+                border-left: 1px solid #ddd;
+                background: $color-background;
+                display: block;
+                padding: 10px 20px;
+                text-decoration: none;
+                border-bottom: 1px solid #efefef;
+
+            }
+            &:first-child a {
+                border-top: 1px solid #ddd;
+            }
+            &:last-child a {
+                border-bottom: 1px solid #ddd;
+            }
+        }
+    }
+}
