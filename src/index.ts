@@ -1,53 +1,44 @@
 
 // Reset browser styles
-require("normalize.css");
+import "normalize.css";
 
 // Code highlightning
-require("prismjs/themes/prism-okaidia.css");
+import "prismjs/themes/prism-okaidia.css";
 
-// Groups in the order they are rendered
-var elements = [
-    {
-        doc: require("./ui/containers/containers.md"),
-        style: require("./ui/containers/containers.scss")
-    },
-    {
-        doc: require("./ui/columns/columns.md"),
-        style: require("./ui/columns/columns.scss")
-    },
-    {
-        doc: require("./ui/typography/typography.md"),
-        style: require("./ui/typography/typography.scss")
-    },
-    {
-        doc: require("./ui/navigation/navigation.md"),
-        style: require("./ui/navigation/navigation.scss")
-    },
-    {
-        doc: require("./ui/buttons/buttons.md"),
-        style: require("./ui/buttons/buttons.scss")
-    },
-    {
-        doc: require("./ui/forms/forms.md"),
-        style: require("./ui/forms/forms.scss")
-    },
-    {
-        doc: require("./ui/dropdowns/dropdowns.md"),
-        style: require("./ui/dropdowns/dropdowns.scss")
-    },
-    {
-        doc: require("./ui/modals/modals.md"),
-        style: require("./ui/modals/modals.scss")
-    },
-    {
-        doc: require("./ui/examples/examples.md"),
-        style: require("./ui/examples/examples.scss")
-    },
+
+import "./ui/containers/containers.scss";
+import "./ui/columns/columns.scss";
+import "./ui/typography/typography.scss";
+import "./ui/navigation/navigation.scss";
+import "./ui/buttons/buttons.scss";
+import "./ui/forms/forms.scss";
+import "./ui/dropdowns/dropdowns.scss";
+import "./ui/modals/modals.scss";
+import "./ui/examples/examples.scss";
+
+import containers from "./ui/containers/containers.md";
+import columns from "./ui/columns/columns.md";
+import typography from "./ui/typography/typography.md";
+import navigation from "./ui/navigation/navigation.md";
+import buttons from "./ui/buttons/buttons.md";
+import forms from "./ui/forms/forms.md";
+import dropdowns from "./ui/dropdowns/dropdowns.md";
+import modals from "./ui/modals/modals.md";
+import examples from "./ui/examples/examples.md";
+
+const sections = [
+    containers,
+    columns,
+    typography,
+    navigation,
+    buttons,
+    forms,
+    dropdowns,
+    modals,
+    examples
 ];
 
-
-
-const createElement = (elem, className) => {
+const createElement = (elem:string, className:string) => {
     let node = document.createElement(elem);
     node.className = className;
     return node;
@@ -56,7 +47,7 @@ const createElement = (elem, className) => {
 document.body.className = "row";
 // Add the markdown files to document
 let main = createElement("main", "col-9");
-main.innerHTML = elements.map( m => m.doc).join("");
+main.innerHTML = sections.join("");
 document.body.appendChild(main);
 
 
@@ -77,7 +68,7 @@ aside.appendChild(nav);
 let menuList  = document.createElement("ul");
 nav.appendChild(menuList);
 let h1Collection = document.getElementsByTagName("h1");
-let linkScrollTops = [];
+let linkScrollTops: any = [];
 for (let h1 of h1Collection) {
     const elemId = h1.getAttribute("id");
     if (!elemId) continue;
@@ -88,7 +79,7 @@ for (let h1 of h1Collection) {
     let listItem  = document.createElement("li");
     listItem.appendChild(link);
     menuList.appendChild(listItem);
-    scrollTop = window.pageYOffset || document.documentElement.scrollTop
+    const scrollTop = window.pageYOffset || document.documentElement.scrollTop
     linkScrollTops.unshift({
         top: h1.getBoundingClientRect().top + scrollTop,
         link: link
@@ -101,8 +92,8 @@ function getBodyScrollTop(){
 }
 window.setInterval(()=>{
     const top = getBodyScrollTop();
-    active = linkScrollTops.find(x => x.top <= (top + 10));
-    linkScrollTops.forEach(x => x.link.className = "" );
+    const active = linkScrollTops.find((x: any) => x.top <= (top + 10));
+    linkScrollTops.forEach((x: any) => x.link.className = "" );
     if (!active) return;
     active.link.className = "active";
 }, 300);
