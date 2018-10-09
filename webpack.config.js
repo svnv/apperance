@@ -1,11 +1,11 @@
 const path = require('path');
 const webpack = require('webpack');
 const prism = require('prismjs');
-const HtmlWebpackPlugin = require('html-webpack-plugin')
+const HtmlWebpackPlugin = require('html-webpack-plugin');
 const StyleLintPlugin = require('stylelint-webpack-plugin');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
-
+const autoprefixer = require('autoprefixer');
 
 module.exports = (env, argv ) => {
     const isDevelopment = argv.mode === 'development';
@@ -51,6 +51,15 @@ module.exports = (env, argv ) => {
                             }
                         },
                         "css-loader", // translates CSS into CommonJS
+                        {
+                            loader: "postcss-loader",
+                            options: {
+                                plugins: () => [autoprefixer({
+                                    'browsers': ['> 1%', 'last 2 versions']
+                                })],
+                            }
+
+                        }, // needed for autoprefixer
                         "sass-loader" // compiles Sass to CSS, using Node Sass by default
                     ]
                 },
