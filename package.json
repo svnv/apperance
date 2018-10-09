@@ -10,6 +10,7 @@
     "build": "webpack --config webpack.config.js --mode=production"
   },
   "devDependencies": {
+    "autoprefixer": "^9.1.5",
     "clean-webpack-plugin": "^0.1.19",
     "css-loader": "^1.0.0",
     "eslint": "^5.6.0",
@@ -20,6 +21,7 @@
     "mini-css-extract-plugin": "^0.4.3",
     "node-sass": "^4.9.3",
     "normalize.css": "^8.0.0",
+    "postcss-loader": "^3.0.0",
     "prettier": "1.14.2",
     "prismjs": "^1.15.0",
     "sass-loader": "^7.1.0",
