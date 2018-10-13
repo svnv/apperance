@@ -2,7 +2,12 @@
   "name": "apperance",
   "version": "0.0.1",
   "description": "Apperance of an app",
-  "main": "index.js",
+  "main": "dist/main.css",
+  "style": "dist/main.css",
+  "files": [
+    "dist/main.css",
+    "LISENCE"
+  ],
   "author": "Sven Viig <sven.viig@gmail.com>",
   "license": "MIT",
   "scripts": {
